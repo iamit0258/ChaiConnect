@@ -46,7 +46,11 @@ const Register = () => {
     <div className="auth-page">
       <div className="auth-card">
         <div className="auth-brand">
-          <div className="brand-icon">☕</div>
+          <img 
+            src="/logo.png" 
+            alt="Chai Connect Logo" 
+            style={{ width: '100px', height: '100px', objectFit: 'contain', margin: '0 auto 16px', display: 'block' }} 
+          />
           <h1>Chai Connect</h1>
           <p>Create your account</p>
         </div>

@@ -36,8 +36,12 @@ const Sidebar = ({ isOpen, onClose }) => {
         />
       )}
       <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
-        <div className="sidebar-brand">
-          <div className="sidebar-brand-icon">☕</div>
+        <div className="sidebar-brand" style={{ gap: '12px' }}>
+          <img 
+            src="/logo.png" 
+            alt="Chai Connect Logo" 
+            style={{ width: '45px', height: '45px', objectFit: 'contain' }} 
+          />
           <div>
             <h2>Chai Connect</h2>
             <p>Discover. Review. Earn.</p>
