@@ -30,7 +30,7 @@ const Sidebar = ({ isOpen, onClose }) => {
             position: 'fixed',
             inset: 0,
             background: 'rgba(0,0,0,0.3)',
-            zIndex: 99,
+            zIndex: 1100,
             display: 'block',
           }}
         />
