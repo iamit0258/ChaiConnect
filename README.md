@@ -4,12 +4,6 @@
 
 ![MERN Stack](https://img.shields.io/badge/Stack-MERN-green) ![License](https://img.shields.io/badge/License-MIT-blue)
 
-## 🔗 Live Demo
-
-- **Frontend**: [Coming soon — deploy to Vercel]
-- **Backend**: [Coming soon — deploy to Render]
-
----
 
 ## 🚀 Quick Setup (Under 5 minutes)
 
@@ -154,7 +148,6 @@ The assignment allows "any alternative to Mapbox." This stack is completely free
 - [x] **Search/Filter** — By name, minimum rating
 - [x] **Leaderboard** — Top point earners with podium display
 - [x] **Spam Prevention** — Rate limiting on review submission
-- [ ] **Testing** — Would add with more time (see below)
 
 ---
 
