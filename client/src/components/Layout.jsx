@@ -3,6 +3,7 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import BottomNav from './BottomNav';
 import { useAuth } from '../context/AuthContext';
+import { SearchIcon } from './Icons';
 
 const Layout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -23,7 +24,7 @@ const Layout = () => {
           </button>
 
           <div className="top-bar-search">
-            <span>🔍</span>
+            <SearchIcon />
             <input
               type="text"
               placeholder="Search chai shops..."

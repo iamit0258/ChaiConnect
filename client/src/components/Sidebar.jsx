@@ -1,5 +1,14 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { 
+  HomeIcon, 
+  MapIcon, 
+  CoffeeIcon, 
+  GiftIcon, 
+  LeaderboardIcon, 
+  UserIcon, 
+  LogoutIcon 
+} from './Icons';
 
 const Sidebar = ({ isOpen, onClose }) => {
   const { user, logout } = useAuth();
@@ -12,12 +21,12 @@ const Sidebar = ({ isOpen, onClose }) => {
   };
 
   const navItems = [
-    { to: '/', icon: '🏠', label: 'Home' },
-    { to: '/map', icon: '🗺️', label: 'Map' },
-    { to: '/shops', icon: '☕', label: 'Shops' },
-    { to: '/rewards', icon: '🎁', label: 'Rewards' },
-    { to: '/leaderboard', icon: '🏆', label: 'Leaderboard' },
-    { to: '/profile', icon: '👤', label: 'Profile' },
+    { to: '/', icon: <HomeIcon />, label: 'Home' },
+    { to: '/map', icon: <MapIcon />, label: 'Map' },
+    { to: '/shops', icon: <CoffeeIcon />, label: 'Shops' },
+    { to: '/rewards', icon: <GiftIcon />, label: 'Rewards' },
+    { to: '/leaderboard', icon: <LeaderboardIcon />, label: 'Leaderboard' },
+    { to: '/profile', icon: <UserIcon />, label: 'Profile' },
   ];
 
   return (
@@ -66,7 +75,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 
           {user && (
             <button className="sidebar-link" onClick={handleLogout}>
-              <span className="icon">🚪</span>
+              <span className="icon"><LogoutIcon /></span>
               Logout
             </button>
           )}

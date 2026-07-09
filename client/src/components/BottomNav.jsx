@@ -1,12 +1,13 @@
 import { NavLink } from 'react-router-dom';
+import { HomeIcon, MapIcon, CoffeeIcon, GiftIcon, UserIcon } from './Icons';
 
 const BottomNav = () => {
   const items = [
-    { to: '/', icon: '🏠', label: 'Home' },
-    { to: '/map', icon: '🗺️', label: 'Map' },
-    { to: '/shops', icon: '☕', label: 'Shops' },
-    { to: '/rewards', icon: '🎁', label: 'Rewards' },
-    { to: '/profile', icon: '👤', label: 'Profile' },
+    { to: '/', icon: <HomeIcon />, label: 'Home' },
+    { to: '/map', icon: <MapIcon />, label: 'Map' },
+    { to: '/shops', icon: <CoffeeIcon />, label: 'Shops' },
+    { to: '/rewards', icon: <GiftIcon />, label: 'Rewards' },
+    { to: '/profile', icon: <UserIcon />, label: 'Profile' },
   ];
 
   return (
