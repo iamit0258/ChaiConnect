@@ -9,7 +9,33 @@ const { errorHandler } = require('./middleware/errorHandler');
 dotenv.config();
 
 // Connect to database
-connectDB();
+connectDB().then(() => {
+  // Recalculate all shop ratings on startup to resolve any 0.0 ratings from previous bug
+  const Shop = require('./models/Shop');
+  const Review = require('./models/Review');
+  
+  Shop.find({}).then(async (shops) => {
+    for (const shop of shops) {
+      const result = await Review.aggregate([
+        { $match: { shop: shop._id } },
+        {
+          $group: {
+            _id: '$shop',
+            averageRating: { $avg: '$rating' },
+            reviewCount: { $sum: 1 },
+          },
+        },
+      ]);
+      if (result.length > 0) {
+        await Shop.findByIdAndUpdate(shop._id, {
+          averageRating: Math.round(result[0].averageRating * 10) / 10,
+          reviewCount: result[0].reviewCount,
+        });
+      }
+    }
+    console.log('✅ Recalculated and fixed all shop ratings successfully.');
+  }).catch(err => console.error('Error fixing ratings:', err));
+});
 
 const app = express();
 

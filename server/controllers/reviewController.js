@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const Review = require('../models/Review');
 const Shop = require('../models/Shop');
 const User = require('../models/User');
@@ -6,8 +7,9 @@ const { asyncHandler } = require('../middleware/errorHandler');
 
 // Helper: Recalculate and update shop's average rating
 const updateShopRating = async (shopId) => {
+  const shopObjectId = typeof shopId === 'string' ? new mongoose.Types.ObjectId(shopId) : shopId;
   const result = await Review.aggregate([
-    { $match: { shop: shopId } },
+    { $match: { shop: shopObjectId } },
     {
       $group: {
         _id: '$shop',
